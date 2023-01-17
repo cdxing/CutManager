@@ -3,6 +3,7 @@
 
 #include "TObject.h"
 #include "TString.h"
+#include "TF1.h"
 #include "../ConfigReader/ConfigReader.h"
 //#include <array>
 
@@ -24,9 +25,12 @@ class CutManager : public TObject
     bool isGoodTrigger(StPicoDst* );
     bool passEventCut(StPicoDst* );
     bool isTofTrack(StPicoDst*, StPicoTrack* );
+    bool isETofTrack(StPicoDst*, StPicoTrack* );
     bool passTrackEP(StPicoTrack*, float);
     bool passTrackBasic(StPicoTrack* );
-    bool isProton( StPicoTrack* );
+    bool isTriton(StPicoDst*, StPicoTrack* );
+    bool isDeuteron(StPicoDst*, StPicoTrack* );
+    bool isProton(StPicoDst*, StPicoTrack* );
     bool isKaon(StPicoDst*, StPicoTrack* );
     bool isPion(StPicoDst*, StPicoTrack* );
 
