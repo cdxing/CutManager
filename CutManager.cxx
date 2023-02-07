@@ -180,7 +180,8 @@ bool CutManager::passTrackEP(StPicoTrack *track, float dca)
     // pt cut 0.2 - 2.0 GeV/c
     Float_t pt = track->pMom().Perp();
     Float_t p  = track->pMom().Mag();
-    if(!(pt > ConstManager::mPrimPtMin[mEnergy] && pt < ConstManager::mPrimPtMax && p < ConstManager::mPrimMomMax)) // 0.2<pt<2  p<10
+    //if(!(pt > ConstManager::mPrimPtMin[mEnergy] && pt < ConstManager::mPrimPtMax && p < ConstManager::mPrimMomMax)) // 0.2<pt<2  p<10
+    if(!(pt > ConstManager::mPrimPtMin && pt < ConstManager::mPrimPtMax && p < ConstManager::mPrimMomMax)) // 0.2<pt<2  p<10
     {
         return kFALSE;
     }
